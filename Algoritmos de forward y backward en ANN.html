@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Nataly Quintanilla_Maria Isabel Chuya">
+
+<title>Algoritmos de forward y backward en ANN</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="Algoritmos de forward y backward en ANN_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Algoritmos de forward y backward en ANN_files/libs/quarto-html/quarto.js"></script>
+<script src="Algoritmos de forward y backward en ANN_files/libs/quarto-html/popper.min.js"></script>
+<script src="Algoritmos de forward y backward en ANN_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Algoritmos de forward y backward en ANN_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Algoritmos de forward y backward en ANN_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Algoritmos de forward y backward en ANN_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Algoritmos de forward y backward en ANN_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Algoritmos de forward y backward en ANN_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Algoritmos de forward y backward en ANN_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Algoritmos de forward y backward en ANN</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Nataly Quintanilla_Maria Isabel Chuya </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="algoritmos-de-forward-y-backward-en-ann" class="level1">
+<h1><strong>Algoritmos de forward y backward en ANN</strong></h1>
+<p>En las redes neuronales artificiales (ANN), los algoritmos de avance (forward) y retroceso (backward) son esenciales para el entrenamiento y el uso de la red. Aquí tienes un resumen de estos algoritmos:</p>
+<ol type="1">
+<li><p>Algoritmo de avance (Forward algorithm): El algoritmo de avance, también conocido como propagación hacia adelante (forward propagation), se utiliza para calcular las salidas de la red neuronal a partir de una entrada dada. Este algoritmo se realiza en capas sucesivas, desde la capa de entrada hasta la capa de salida. Cada neurona en una capa toma las salidas de las neuronas en la capa anterior, las combina con los pesos correspondientes y aplica una función de activación para producir su propia salida. Este proceso continúa capa por capa hasta que se obtiene la salida final de la red.</p>
+<p><img src="fig%201.png" class="img-fluid"></p></li>
+<li><p>Algoritmo de retroceso (Backward algorithm): El algoritmo de retroceso, también conocido como retropropagación del error (backpropagation), se utiliza para entrenar la red neuronal ajustando los pesos de las conexiones entre las neuronas. El objetivo del entrenamiento es minimizar una función de costo que mide la diferencia entre las salidas predichas por la red y los valores reales de entrenamiento.</p></li>
+</ol>
+<p>El algoritmo de retroceso se realiza en dos etapas principales: a) Etapa de avance: Durante esta etapa, se utiliza el algoritmo de avance para calcular las salidas de la red neuronal a partir de las entradas de entrenamiento. b) Etapa de retroceso del error: En esta etapa, se calcula el error entre las salidas predichas y los valores reales, y se propaga hacia atrás a través de la red para ajustar los pesos. Esto se logra mediante el cálculo de gradientes y la actualización de los pesos utilizando un algoritmo de optimización, como el descenso del gradiente.</p>
+<p>Durante la etapa de retroceso, se calculan los gradientes de los pesos de la red utilizando la regla de la cadena y se actualizan los pesos en dirección opuesta al gradiente para minimizar la función de costo. Este proceso se repite iterativamente hasta que se alcance un criterio de convergencia deseado.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/fit%202.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>En resumen, el algoritmo de avance se utiliza para calcular las salidas de la red neuronal a partir de una entrada dada, mientras que el algoritmo de retroceso se utiliza para ajustar los pesos de la red mediante la retropropagación del error y la actualización de los pesos. Estos algoritmos son fundamentales para el entrenamiento y el uso efectivo de las redes neuronales artificiales. Los algoritmos de avance (forward) y retroceso (backward) son fundamentales en el entrenamiento y el uso de redes neuronales artificiales (ANN). Aquí tienes un resumen de estos algoritmos:</p>
+<ol type="1">
+<li><p>Algoritmo de avance (Forward algorithm): El algoritmo de avance, también conocido como propagación hacia adelante (forward propagation), es utilizado para calcular la salida de una red neuronal a partir de una entrada dada. En este algoritmo, las entradas se propagan capa por capa a través de la red neuronal, donde cada neurona en una capa toma las salidas de las neuronas en la capa anterior, las combina ponderadamente con los pesos y aplica una función de activación para producir su propia salida. Este proceso se repite hasta llegar a la capa de salida, donde se obtiene la salida final de la red.</p></li>
+<li><p>Algoritmo de retroceso (Backward algorithm): El algoritmo de retroceso, también conocido como retropropagación del error (backpropagation), es utilizado para entrenar una red neuronal ajustando los pesos de las conexiones entre las neuronas. Este algoritmo se basa en la minimización de una función de costo que mide la diferencia entre las salidas predichas por la red y los valores reales de entrenamiento.</p></li>
+</ol>
+<p>El proceso de retroceso se realiza en dos etapas: a) Etapa de avance: Durante esta etapa, se utiliza el algoritmo de avance para calcular las salidas de la red neuronal a partir de las entradas de entrenamiento. b) Etapa de retroceso del error: En esta etapa, se calcula el error entre las salidas predichas y los valores reales, y se propaga hacia atrás a través de la red para ajustar los pesos. Esto se logra mediante el cálculo de gradientes y la actualización de los pesos utilizando algoritmos de optimización, como el descenso del gradiente.</p>
+<p>En resumen, el algoritmo de avance se utiliza para calcular las salidas de una red neuronal a partir de una entrada dada, mientras que el algoritmo de retroceso se utiliza para ajustar los pesos de la red mediante la retropropagación del error. Estos algoritmos son esenciales en el entrenamiento y uso efectivo de las redes neuronales artificiales, ya que permiten que la red aprenda a partir de los datos de entrenamiento y realice predicciones precisas en nuevas entradas. En RStudio, los algoritmos de avance (forward) y retroceso (backward) se utilizan en el contexto de las redes neuronales artificiales (ANN) para entrenar y utilizar la red. Aquí tienes un resumen de estos algoritmos en RStudio:</p>
+<ol type="1">
+<li><p>Algoritmo de avance (Forward algorithm): El algoritmo de avance, también conocido como propagación hacia adelante (forward propagation), se utiliza para calcular las salidas de la red neuronal a partir de una entrada dada. En RStudio, puedes implementar este algoritmo utilizando paquetes como <code>neuralnet</code>, <code>keras</code> o <code>nnet</code>. Estos paquetes te permiten construir la arquitectura de la red, definir las funciones de activación y propagar los datos de entrada a través de la red para obtener la salida predicha. Puedes especificar la estructura de la red, los pesos iniciales y las funciones de activación para cada capa de la red.</p></li>
+<li><p>Algoritmo de retroceso (Backward algorithm): El algoritmo de retroceso, también conocido como retropropagación del error (backpropagation), se utiliza para entrenar la red neuronal ajustando los pesos de las conexiones entre las neuronas. En RStudio, puedes implementar este algoritmo utilizando paquetes como <code>neuralnet</code>, <code>keras</code> o <code>nnet</code>. Estos paquetes proporcionan funciones para definir la función de costo, configurar el algoritmo de optimización y realizar la retropropagación del error para actualizar los pesos de la red. Puedes especificar el criterio de convergencia, el algoritmo de optimización (como el descenso del gradiente estocástico) y otros parámetros relacionados con el entrenamiento de la red.</p></li>
+</ol>
+<p>En resumen, en RStudio, puedes implementar los algoritmos de avance y retroceso utilizando paquetes específicos para redes neuronales, como <code>neuralnet</code>, <code>keras</code> o <code>nnet</code>. Estos paquetes proporcionan funciones y estructuras de datos que te permiten construir, entrenar y utilizar redes neuronales artificiales. Puedes especificar la arquitectura de la red, las funciones de activación, el algoritmo de optimización y otros parámetros relevantes para el entrenamiento y uso de la red en RStudio.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
